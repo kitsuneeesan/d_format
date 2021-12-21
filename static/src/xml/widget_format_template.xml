@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+    <t t-name="WidgetFormatTemplate">
+        <div>
+            <t t-if="widget.mode == 'edit' ">
+                <input id='input_int' type="text" class="o_input" t-att-value="widget.value" />
+            </t>
+            <t t-if="widget.mode == 'readonly' ">
+                <span t-esc="widget.valueString()" />
+            </t>
+        </div>
+    </t>
+</template>
