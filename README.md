@@ -16,9 +16,9 @@ use widget="d_format" on float_field
 
 
 ## Issue
-when you put it in line then the field can't be filled (Fix Me!)
+when you put it in line then the field can't be filled (fix me plz!)
 
 
 
 ## To do
-add currency logo at the beginning like monetary widget
+add currency symbol at the beginning like monetary widget
