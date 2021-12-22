@@ -1,4 +1,4 @@
-odoo.define('tutorial_javascript.d_format', function (require) {
+odoo.define('d_format.WidgetD', function (require) {
     "use strict";
     const AbstractField = require('web.AbstractField');
     const FieldRegistry = require('web.field_registry');
