@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="d_format_form" model="ir.ui.view">
+            <field name="name">d.format.form</field>
+            <field name="model">d.format</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="currency_id"/>
+                            </group>
+                            <group>
+                                <field name="float_field" widget="d_format" options="{'show_currency_symbol': False}"/>
+                                <field name="monetary_field" widget="d_format" options="{'show_currency_symbol': True}"/>
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page string="Format Line">
+                                <field name="line_ids">
+
+                                    <tree string="line" editable="bottom">
+                                        <field name="name"/>
+                                        <field name="currency_id"/>
+                                        <field name="float_field" widget="d_format" options="{'show_currency_symbol': False}"/>
+                                        <field name="monetary_field" widget="d_format" options="{'show_currency_symbol': True}"/>
+                                    </tree>
+
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="d_format_menu_action" model="ir.actions.act_window">
+            <field name="name">D Format</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">d.format</field>
+        </record>
+
+        <menuitem id="d_format_root" name="D Format"/>
+
+
+        <menuitem id="d_format_menu" name="D Format" parent="d_format_root" action="d_format_menu_action" />
+    </data>
+</odoo>

@@ -3,12 +3,11 @@
 
 
 ## Usage
-use widget="d_format" on float_field
+in monetary field or float field use widget="d_format" and optional u can add options="{'show_currency_symbol': True}" default is False
 
 ```xml
-  <field name="float_field" widget="d_format"/>
+  <field name="monetary_field" widget="d_format" options="{'show_currency_symbol': True}"/>
 ```
-
 
 ## Preview
 ![Preview](https://user-images.githubusercontent.com/69460672/147023046-2e132593-d512-42c0-a602-435b08592c4a.gif)
@@ -17,8 +16,3 @@ use widget="d_format" on float_field
 
 ## Issue
 when you put it in line then the field can't be filled (fix me plz!)
-
-
-
-## To do
-add currency symbol at the beginning like monetary widget

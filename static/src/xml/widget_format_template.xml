@@ -3,10 +3,36 @@
     <t t-name="WidgetFormatTemplate">
         <div>
             <t t-if="widget.mode == 'edit' ">
-                <input id='input_int' type="text" class="o_input" t-att-value="widget.value" />
+                <t t-if="widget.currency and widget.show_currency_symbol">
+                    <div style="white-space: nowrap;" name="amount">
+                        <t t-if="widget.currency.position == 'after'">
+                            <input id="input_int" type="text" class="o_input" t-att-value="widget.value"/>
+                            <span t-esc="widget.currency.symbol"/>
+                        </t>
+                        <t t-else="">
+                            <span t-esc="widget.currency.symbol"/>
+                            <input id="input_int" type="text" class="o_input" t-att-value="widget.value"/>
+                        </t>
+                    </div>
+                </t>
+                <t t-else="">
+                    <input id="input_int" class="o_input" placeholder="" type="text" autocomplete="none" t-att-value="widget.value"/>
+                </t>
             </t>
             <t t-if="widget.mode == 'readonly' ">
-                <span t-esc="widget.valueString()" />
+                <t t-if="widget.currency and widget.show_currency_symbol">
+                    <t t-if="widget.currency.position == 'after'">
+                        <span t-esc="widget.valueString()" />
+                        <span t-esc="widget.currency.symbol"/>
+                    </t>
+                    <t t-else="">
+                        <span t-esc="widget.currency.symbol"/>
+                        <span t-esc="widget.valueString()" />
+                    </t>
+                </t>
+                <t t-else="">
+                    <span t-esc="widget.valueString()" />
+                </t>
             </t>
         </div>
     </t>
